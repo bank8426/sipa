@@ -4,6 +4,8 @@ echo "asd";
 <php>
 hello
 <<<<<<< HEAD
+hahahaha
+hahahaha
 i love u
 =======
 im hungry
