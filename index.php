@@ -3,5 +3,5 @@ echo "asd";
 ?>
 <php>
 hello
-how r u?
+i love u
 </php>
