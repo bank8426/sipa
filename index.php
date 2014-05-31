@@ -23,7 +23,7 @@ $result = mysql_query("SELECT * FROM commentator");
                 if($row['c_id']!='')
                 {
                     echo "<td width='25%' style='background-color:#FFF'>";					
-					 echo "<img src=\'" . $row['c_picture'] . "' border=0>";
+					 echo "<img src='" . $row['c_picture'] . "' border=0>";
                     echo $row['c_id'] . " " . $row['c_name'];
                     echo "<br>";	
                     echo "</td>";
