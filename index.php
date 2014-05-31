@@ -4,7 +4,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Untitled Document</title>
 </head>
-<body>
+<body style="background-color:#416730">
 <?
 include 'connect.php';
 $result = mysql_query("SELECT * FROM commentator");
