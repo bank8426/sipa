@@ -54,7 +54,9 @@ SELECT
 	 
 	FROM 
 	feedback 
-	WHERE c_id = ".$_GET['c_id']." ORDER BY created_date DESC
+	WHERE c_id = ".$_GET['c_id']. "
+	 AND f_message != '' AND f_name != ''
+	 ORDER BY created_date DESC
 	";
 	$result = mysql_query($sql);
 	
@@ -121,7 +123,7 @@ SELECT
       while($feedback = mysql_fetch_array($result)) {
       ?>
   <tr>
-    <td bgcolor="#FFFFFF">NAME :<?=$feedback['f_name']?><br>
+    <td bgcolor="#FFFFFF">NAME :<?=$feedback['f_name']?> [<?=$feedback['created_date'] ?>]<br>
 
 <?=nl2br($feedback['f_message'])?><br>
 <br>
