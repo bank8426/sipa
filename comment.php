@@ -82,7 +82,7 @@ SELECT
 
 <body style="background-color:#416730">
 <a href="index.php"> <-- Back</a>
-<? echo  '<div style="color:#FDD900;text-align:Left; font-size: 50px">' . $row['c_name'] . '(Rating : ' . $avg .')</div>' ;	
+<? echo  '<div style="color:#FDD900;text-align:Left; font-size: 50px">' . $row['c_name'] . '(Rating : ' . number_format( $avg ,2).')</div>' ;	
 					?>
 
 
