@@ -129,20 +129,21 @@ SELECT
 </table>
 <p>&nbsp;</p>
 
-<table width="100%" border="1" align="center" style="background:#648C41">
+<table width="100%" border="0" align="center" style="background:#648C41;padding:20px">
   <tr>
   <td>
 
-<table width="100%">
+<table width="100%" background="#2F4922" >
 
  <?
  $result = mysql_query($sql);
       while($feedback = mysql_fetch_array($result)) {
       ?>
   <tr>
-    <td bgcolor="#FFFFFF">NAME :<?=$feedback['f_name']?> [<?= date( 'd/m/Y H:i:s' , $feedback['created_date']) ?>]<br>
+    <td bgcolor="#2F4922" style="padding:5px"><span style="color:#FFF; font-weight:bold">NAME :<?=$feedback['f_name']?> [<?= date( 'd/m/Y H:i:s' , $feedback['created_date']) ?>]<br>
 
 <?=nl2br($feedback['f_message'])?><br>
+</span>
 <br>
 
 </td>
