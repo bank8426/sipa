@@ -23,12 +23,13 @@ $result = mysql_query("SELECT * FROM commentator");
 				 echo "<td width='25%' style='background-color:#648C41'>";	
                 if($row['c_id']!='')
                 {
-                   				
+                   	echo"<a href=\comment.php?c_id=" .$row['c_id'] . ">";
 					 echo "<img width=250 src='" . $row['c_picture'] . "' border=0>";
 					 
 					echo  '<div style="color:#FFFFFF;text-align:center;">' . $row['c_id'] . " " . $row['c_name'] .
 					'</div>';	
-                    echo "</td>";
+					echo "</a>";
+                    //echo "</td>";
                 
                 }
 				echo "</td>";
