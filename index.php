@@ -20,22 +20,18 @@ $result = mysql_query("SELECT * FROM commentator");
         <?
             for($i=0;$i<4;$i++)
             {
+				 echo "<td width='25%' style='background-color:#648C41'>";	
                 if($row['c_id']!='')
                 {
-                    echo "<td width='25%' style='background-color:#648C41'>";					
+                   				
 					 echo "<img width=250 src='" . $row['c_picture'] . "' border=0>";
 					 
-					echo  '<span style="color:#FFFFFF;text-align:center;">' . $row['c_id'] . " " . $row['c_name'] .
-					'</span>';
-                    echo "<br>";	
+					echo  '<div style="color:#FFFFFF;text-align:center;">' . $row['c_id'] . " " . $row['c_name'] .
+					'</div>';	
                     echo "</td>";
                 
                 }
-                else
-                {
-                    echo "<td width='25%' style='background-color:#FFF'>";
-                    echo "</td>";
-                }
+				echo "</td>";
 				if($i<3)
 				{
                 	$row = mysql_fetch_array($result);
