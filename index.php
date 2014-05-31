@@ -3,6 +3,9 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <title>Untitled Document</title>
+<? echo  '<div style="color:#FDD900;text-align:center; font-size: 50px">Buffalo Bridge Football</div>';	
+					?>
+
 </head>
 <body style="background-color:#416730">
 <?
