@@ -116,8 +116,9 @@ SELECT
   
     <td  style="background:#648C41" align="center">
     <br><img src="<?=$row['c_picture']?>" width="300"><br>
-
+<span style="color:#FFF; font-weight:bold">
 <?=$row['c_profile']?>
+</span>
     </td>
     <td>
     
