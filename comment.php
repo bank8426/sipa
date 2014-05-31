@@ -117,6 +117,7 @@ SELECT
 <table width="100%">
 
  <?
+ $result = mysql_query($sql);
       while($feedback = mysql_fetch_array($result)) {
       ?>
   <tr>
