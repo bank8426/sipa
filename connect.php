@@ -1,3 +1,5 @@
+
+
 <?
 
 
@@ -25,3 +27,4 @@ mysql_query ('set character_set_results=\'utf8\'');
 mysql_query ('set collation_connection=\'utf8_unicode_ci\'');
 
 ?>
+
