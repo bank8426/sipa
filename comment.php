@@ -1,9 +1,11 @@
 
 <? include 'connect.php';
+$checkFeedback=true;
 
 
-
-if($_POST['SEND']){
+if($_POST['SEND']  ){
+	if($_POST['nameFeed'] !='' &&$_POST['commentTA'] !='')
+	{
 	$sql = "INSERT INTO buffalobridge.feedback 
 	(
 	c_id, 
@@ -25,6 +27,12 @@ if($_POST['SEND']){
 	NOW()
 	);";
 	mysql_query($sql);
+	$checkFeedback = true;
+	}
+	else
+	{
+		$checkFeedback = false;
+	}
 }
 
 
@@ -83,7 +91,16 @@ SELECT
 
 
 <body style="background-color:#416730">
+
+
 <a href="index.php"> <-- Back</a>
+
+<?
+	if($checkFeedback == false)
+	{
+		echo  '<div style="color:#FF0000;text-align:Left; font-size: 50px">ขออภัย กรุณากรอกข้อมูลให้ครบถ้วน</div>';
+	}
+?>
 <? echo  '<div style="color:#FDD900;text-align:Left; font-size: 50px">' . $row['c_name'] . '(Rating : ' . number_format( $avg ,2).')</div>' ;	
 					?>
 
@@ -123,7 +140,7 @@ SELECT
       while($feedback = mysql_fetch_array($result)) {
       ?>
   <tr>
-    <td bgcolor="#FFFFFF">NAME :<?=$feedback['f_name']?> [<?=$feedback['created_date'] ?>]<br>
+    <td bgcolor="#FFFFFF">NAME :<?=$feedback['f_name']?> [<?= date( 'd/m/Y H:i:s' , $feedback['created_date']) ?>]<br>
 
 <?=nl2br($feedback['f_message'])?><br>
 <br>
