@@ -57,18 +57,33 @@ SELECT
 	WHERE c_id = ".$_GET['c_id']." ORDER BY created_date DESC
 	";
 	$result = mysql_query($sql);
+	
+	$sum = 0;
+	$count = 0;
+	$avg = 0;
+	while($feedback = mysql_fetch_array($result))
+	{
+		$sum = $sum + $feedback[f_rating];
+		$count = $count + 1;
+	}
+	
+	$avg =$sum/$count;
+	
 ?>
 <!DOCTYPE HTML>
 <html>
 <head>
 <meta charset="utf-8">
 <title>Buffalo Bridge Football</title>
-<? echo  '<div style="color:#FDD900;text-align:Left; font-size: 50px">' . $row['c_name'] . '</div>';	
-					?>
+
+
 </head>
 
-<body style="background-color:#416730">
 
+<body style="background-color:#416730">
+<a href="index.php"> <-- Back</a>
+<? echo  '<div style="color:#FDD900;text-align:Left; font-size: 50px">' . $row['c_name'] . '(Rating : ' . $avg .')</div>' ;	
+					?>
 
 
 
@@ -77,8 +92,11 @@ SELECT
 
 
 <table width="100%" >
-  <tr>
-    <td style="background:#648C41" align="center"><img src="<?=$row['c_picture']?>" width="300"><br>
+
+  <tr >
+  
+    <td  style="background:#648C41" align="center">
+    <br><img src="<?=$row['c_picture']?>" width="300"><br>
 
 <?=$row['c_profile']?>
     </td>
@@ -95,7 +113,6 @@ SELECT
 <table width="200" border="1" align="center" style="background:#648C41">
   <tr>
   <td>
-    <p>&nbsp;</p>
 
 <table width="100%">
 
