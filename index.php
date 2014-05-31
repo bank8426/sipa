@@ -22,9 +22,11 @@ $result = mysql_query("SELECT * FROM commentator");
             {
                 if($row['c_id']!='')
                 {
-                    echo "<td width='25%' style='background-color:#FFF'>";					
+                    echo "<td width='25%' style='background-color:#648C41'>";					
 					 echo "<img width=250 src='" . $row['c_picture'] . "' border=0>";
-                    echo $row['c_id'] . " " . $row['c_name'];
+					 
+					echo  '<span style="color:#FFFFFF;text-align:center;">' . $row['c_id'] . " " . $row['c_name'] .
+					'</span>';
                     echo "<br>";	
                     echo "</td>";
                 
