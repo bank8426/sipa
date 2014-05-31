@@ -110,7 +110,7 @@ SELECT
 </table>
 <p>&nbsp;</p>
 
-<table width="200" border="1" align="center" style="background:#648C41">
+<table width="100%" border="1" align="center" style="background:#648C41">
   <tr>
   <td>
 
