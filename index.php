@@ -42,12 +42,12 @@ $result = mysql_query("SELECT * FROM commentator");
 	feedback 
 	WHERE c_id = ".$row['c_id']." ORDER BY created_date DESC
 	";
-	$result = mysql_query($sql);
+	$resultAvg = mysql_query($sql);
 	
 	$sum = 0;
 	$count = 0;
 	$avg = 0;
-	while($feedback = mysql_fetch_array($result))
+	while($feedback = mysql_fetch_array($resultAvg))
 	{
 		$sum = $sum + $feedback[f_rating];
 		$count = $count + 1;
