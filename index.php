@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Untitled Document</title>
+<title>Buffalo Bridge Football</title>
 <? echo  '<div style="color:#FDD900;text-align:center; font-size: 50px">Buffalo Bridge Football</div>';	
 					?>
 

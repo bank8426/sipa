@@ -1,3 +1,4 @@
+
 <? include 'connect.php';
 
 
@@ -31,8 +32,8 @@ if($_POST['SEND']){
 $sql = "
 SELECT 	
 	c_name, 
-	c_picture
-
+	c_picture,
+	c_profile
 	 
 	FROM 
 	commentator 
@@ -53,7 +54,7 @@ SELECT
 	 
 	FROM 
 	feedback 
-	WHERE c_id = ".$_GET['c_id']."
+	WHERE c_id = ".$_GET['c_id']." ORDER BY created_date DESC
 	";
 	$result = mysql_query($sql);
 ?>
@@ -61,10 +62,12 @@ SELECT
 <html>
 <head>
 <meta charset="utf-8">
-<title>Untitled Document</title>
+<title>Buffalo Bridge Football</title>
+<? echo  '<div style="color:#FDD900;text-align:Left; font-size: 50px">' . $row['c_name'] . '</div>';	
+					?>
 </head>
 
-<body>
+<body style="background-color:#416730">
 
 
 
@@ -73,34 +76,34 @@ SELECT
 
 
 
-<table width="100%">
+<table width="100%" >
   <tr>
-    <td><img src="<?=$row['c_picture']?>" width="300"><br>
-<?=$row['c_name']?>
+    <td style="background:#648C41" align="center"><img src="<?=$row['c_picture']?>" width="300"><br>
+
+<?=$row['c_profile']?>
     </td>
     <td>
-    <form action="?c_id=<?=$_GET['c_id']?>" method="post">
-    Name: <input name="nameFeed" type="text" size="50" maxlength="200">
+    
+<br>
 <br>
 
-Comment: <br>
-	<textarea name="commentTA" cols="80" rows="3"></textarea><br>
-Rating: 
-    <input name="Rating" type="radio" value="1"> 1
-    <input name="Rating" type="radio" value="2"> 2
-    <input name="Rating" type="radio" value="3"> 3
-    <input name="Rating" type="radio" value="4"> 4
-    <input name="Rating" type="radio" value="5"> 5<br>
-<input name="SEND" value="Send Feedback" type="submit">
-</form>
-<br>
-<br>
+</td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+
+<table width="200" border="1" align="center" style="background:#648C41">
+  <tr>
+  <td>
+    <p>&nbsp;</p>
+
 <table width="100%">
+
  <?
       while($feedback = mysql_fetch_array($result)) {
       ?>
   <tr>
-    <td>NAME :<?=$feedback['f_name']?><br>
+    <td bgcolor="#FFFFFF">NAME :<?=$feedback['f_name']?><br>
 
 <?=nl2br($feedback['f_message'])?><br>
 <br>
@@ -108,10 +111,26 @@ Rating:
 </td>
   </tr>
   <? }?>
+  <tr>
 </table>
+<p>&nbsp;</p>
+<form action="?c_id=<?=$_GET['c_id']?>" method="post">
+   <span style="color:#FFF; font-weight:bold"> Name: </span><input name="nameFeed" type="text" size="50" maxlength="200">
+<br>
+
+<span style="color:#FFF; font-weight:bold">Comment:</span> <br>
+	<textarea name="commentTA" cols="80" rows="3"></textarea><br>
+<span style="color:#FFF; font-weight:bold">Rating: </span>
+    <input name="Rating" type="radio" value="1"><span style="color:#FFF; font-weight:bold"> 1</span>
+    <input name="Rating" type="radio" value="2"><span style="color:#FFF; font-weight:bold"> 2</span>
+    <input name="Rating" type="radio" value="3"><span style="color:#FFF; font-weight:bold"> 3</span>
+    <input name="Rating" type="radio" value="4"><span style="color:#FFF; font-weight:bold"> 4</span>
+    <input name="Rating" type="radio" value="5"><span style="color:#FFF; font-weight:bold"> 5</span><br>
+<input name="SEND" value="Send Feedback" type="submit">
+</form>
 </td>
   </tr>
 </table>
-<p>&nbsp;</p>
+
 </body>
 </html>
