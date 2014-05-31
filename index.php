@@ -8,25 +8,10 @@
 <?
 include 'connect.php';
 $result = mysql_query("SELECT * FROM commentator");
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ?>
-<table width="200" border="0" style="background-color:#416730">
-<tr><td>
-    <table width="200" border="1" style="background-color:#648C41">
+<table width="1000" border="0" align="center" style="background-color:#416730">
+<tr><td align="center">
+    <table width="800" border="1" style="background-color:#648C41">
     
       <?
       while($row = mysql_fetch_array($result)) {
@@ -37,7 +22,7 @@ $result = mysql_query("SELECT * FROM commentator");
             {
                 if($row['c_id']!='')
                 {
-                    echo "<td style='background-color:#FFF'>";
+                    echo "<td width='25%' style='background-color:#FFF'>";
                     echo $row['c_id'] . " " . $row['c_name'];
                     echo "<br>";	
                     echo "</td>";
@@ -45,7 +30,7 @@ $result = mysql_query("SELECT * FROM commentator");
                 }
                 else
                 {
-                    echo "<td style='background-color:#FFF'>";
+                    echo "<td width='25%' style='background-color:#FFF'>";
                     echo "</td>";
                 }
                 $row = mysql_fetch_array($result);
