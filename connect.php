@@ -1,7 +1,7 @@
 <?
 
 
-if($_SERVER['HTTP_HOST'] == 'http://128.199.230.16/'){
+if($_SERVER['HTTP_HOST'] == '128.199.230.16'){
 	
 	$ServerName = 'localhost';
 	$User = 'buffalobridge';
@@ -10,7 +10,7 @@ if($_SERVER['HTTP_HOST'] == 'http://128.199.230.16/'){
 }else{
 	$ServerName = 'localhost';
 	$User = 'root';
-	$Password = 'master99';
+	$Password = '1234';
 	$DatabaseName = 'buffalobridge';
 }
 

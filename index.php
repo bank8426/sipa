@@ -1,19 +1,56 @@
 <?
-echo "asd";
+include 'connect.php';
+$result = mysql_query("SELECT * FROM commentator");
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ?>
-<php>
-hello
-<<<<<<< HEAD
-hahahaha
-hahahaha
-i love u
-=======
-im hungry
->>>>>>> 50314eb918ebdcd170db99ffab99c3e5de3c3398
-</php>
-<br>
-<br>
-
-<?='Nikky Test online 9'?>
-
-test drond
+<table width="200" border="0" style="background-color:#416730">
+<tr><td>
+    <table width="200" border="1" style="background-color:#648C41">
+    
+      <?
+      while($row = mysql_fetch_array($result)) {
+      ?>
+      <tr>
+        <?
+            for($i=0;$i<4;$i++)
+            {
+                if($row['c_id']!='')
+                {
+                    echo "<td style='background-color:#FFF'>";
+                    echo $row['c_id'] . " " . $row['c_name'];
+                    echo "<br>";	
+                    echo "</td>";
+                
+                }
+                else
+                {
+                    echo "<td style='background-color:#FFF'>";
+                    echo "</td>";
+                }
+                $row = mysql_fetch_array($result);
+            }
+        ?>
+      </tr>
+      <?
+      }
+        ?>
+    </table>
+</td></tr>
+</table>
+<?
+mysql_close();
+?>
