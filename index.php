@@ -33,7 +33,10 @@ $result = mysql_query("SELECT * FROM commentator");
                     echo "<td width='25%' style='background-color:#FFF'>";
                     echo "</td>";
                 }
-                $row = mysql_fetch_array($result);
+				if($i<4)
+				{
+                	$row = mysql_fetch_array($result);
+				}
             }
         ?>
       </tr>
